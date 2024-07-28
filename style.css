@@ -429,4 +429,16 @@ body, html {
     .mobile{
         display: block;
     }
+
+    .Berhane-abt-us-img{
+        width: 500px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    
+    .projects-title{
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    
 }
