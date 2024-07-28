@@ -414,7 +414,7 @@ body, html {
 
     .overlay-home h4 {
         margin-bottom: -40px;
-        padding-top:150%;
+        padding-top:10%;
         font-size: .7rem;
         font-weight: normal;
     }
