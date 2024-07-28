@@ -1,0 +1,432 @@
+.Berhane-abt-us-img{
+    width: 500px;
+    padding-top: 60px;
+}
+
+.projects-title{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+/* Ensure the container has relative positioning */
+.project-img-container {
+    position: relative;
+    display: inline-block;
+}
+.overlay a{
+    position:absolute;
+    bottom:70px;
+    background-color: white;
+    padding: 15px;
+    text-decoration: none;
+    outline: none;
+    color: black;
+}
+
+.overlay h1{
+    text-align: center;
+}
+
+.overlay h3{
+    text-align: center;
+}
+.project-description{
+    position:absolute;
+    bottom:10px;
+}
+/* Style the overlay to cover the image */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0; /* Ensure no margin */
+    padding: 0; /* Ensure no padding */
+}
+
+/* Ensure the overlay is visible on hover */
+.project-img-container:hover .overlay {
+    opacity: 1;
+}
+
+/* Responsive image */
+.project-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0; /* Ensure no margin */
+    padding: 0; /* Ensure no padding */
+    border-radius: 10px; /* Match border-radius with overlay */
+}
+.skills-title{
+    padding-top: 70px;
+}
+
+.contact-title{
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.contact{
+    min-height: 50vh;
+    text-align: center;
+}
+
+.contact-container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.none-blue-link-img{
+    text-decoration: none;
+    outline: none;
+    color:inherit;
+}
+
+
+.container h2{
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.container-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+}
+
+.contact-form{
+    text-align: left;
+}
+
+.contact-form h3{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+input, textarea{
+    width:100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f8f9fa;
+    color:#333;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    box-shadow: 0 0 8px #bbb;
+}
+
+button{
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3a3a3a;
+    color: #fff;
+    border: none;
+    cursor:pointer;
+    transition: 0.3s ease;
+}
+
+button:hover{
+}
+
+.contact-info{
+    text-align: left;
+}
+
+.contact-info h3{
+    font-size:24px;
+    margin-bottom: 20px;
+}
+
+.contact-info p{
+    margin-bottom: 10px;
+}
+
+.contact-info i{
+    margin-right: 10px;
+}
+
+footer {
+    color: white;
+    background-color: black !important;
+}
+
+.footer-text {
+    margin-top: 1.5rem;
+    color: white;
+    text-align: center;
+    background-color: #F8F9FA;
+}
+
+.footer-text p{
+    padding-top: 20px;
+    margin-bottom: -10px;
+    color: black;
+}
+
+.contact-logo{
+    font-size: 40px;
+}
+
+.resume-tab{
+    display: inline;
+    padding-left: 20px;
+}
+
+.skills-tabs{
+
+}
+
+.resume-content{
+    padding-left: 50px;
+}
+
+#resume-skills{
+    display: block;
+}
+#resume-coursework, #resume-education, #resume-honors, #resume-experiences{
+    display: none;
+}
+
+.resume-link{
+    padding-top: 50px;
+}
+
+.resume-elements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px; /* Adjust the gap between elements */
+    padding-top: 20px;
+
+}
+
+
+
+.resume-element {
+    margin-bottom: 20px;
+}
+
+*.unselectable {
+    user-select: none;
+}
+
+/* Initial hover underline animation */
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Clicked state underline animation */
+.hover-underline-animation.clicked::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    background-color: #0087ca; /* Ensure the underline color is consistent */
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#home-page {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-page img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 25% 25%;
+}
+
+.home-img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide any overflow */
+}
+
+.home-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%; /* Ensure height fills the screen */
+    transform: translate(-50%, -50%);
+}
+
+.overlay-home {
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    left: 0; /* Position at the left */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust color and opacity as needed */
+    padding: 20px;
+    opacity: 1; /* Initially hidden */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+    color: white;
+}
+
+.overlay-home h1, .overlay-home h2 {
+    margin: 0;
+}
+
+.overlay-home h1 {
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.overlay-home h4 {
+    margin-bottom: -100px;
+    padding-top:900px;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.navbar {
+    position: fixed; /* Make the navbar fixed */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar is above other content */
+    box-shadow: 10px 1px 8px black;
+}
+
+#about-page, #projects-page{
+    padding-top: 50px;
+}
+
+.overlay a:hover{
+    background-color: #bbbbbb;
+}
+
+.send-message-btn:hover{
+    background-color: black;
+}
+
+.mobile{
+    display: none;
+}
+.not-mobile{
+    display: block;
+}
+
+@media screen and (max-width: 768px){
+    .nav-link {
+        font-size: 1.25rem;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 10px;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .Berhane-abt-us-img{
+        width: 100%;
+        padding-top: 60px;
+    }
+    .resume-elements {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px; /* Adjust the gap between elements */
+        padding-top: 20px;
+
+    }
+
+    .resume-content{
+        padding-left: 0;
+    }
+
+    .contact-form{
+        padding-top: 30px;
+    }
+
+    #home-page {
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #home-page img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 25% 25%;
+    }
+
+    .home-img-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; /* Hide any overflow */
+    }
+
+    .home-img {
+        position: absolute;
+        top: 50%;
+        width: auto;
+        height: 100%; /* Ensure height fills the screen */
+        transform: translate(-50%, -50%);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .overlay-home h4 {
+        margin-bottom: -40px;
+        padding-top:170%;
+        font-size: .7rem;
+        font-weight: normal;
+    }
+
+    .overlay-home h1 {
+        font-size: 2rem;
+        font-weight: bold
+    }
+    .not-mobile{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+}
