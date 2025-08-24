@@ -1,235 +1,200 @@
+/* =========================
+   Base / Theme
+   ========================= */
+:root {
+    --bg: rgb(25, 25, 25);
+    --text: #ffffff;
+    --accent: #3b82f6;           /* blue accent */
+    --muted: #bbbbbb;
+
+    /* Card system */
+    --card-bg: #111;
+    --card-border: #2a2a2a;
+    --card-radius: 14px;
+    --card-shadow: 0 4px 10px rgba(0,0,0,.25);
+    --card-shadow-hover: 0 8px 20px rgba(0,0,0,.35);
+
+    /* Spacing */
+    --gap-lg: 24px;
+    --gap-sm: 16px;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
-.Berhane-abt-us-img{
-    width: 500px;
-    border-radius: 20px;
-    margin-top: 150px;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--bg);
+    color: var(--text) !important;
 }
 
-.projects-title{
+/* =========================
+   Navbar
+   ========================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 10px 1px 8px black;
+    background-color: black;
+    color: var(--text);
+    font-size: 20px !important;
+}
+
+/* =========================
+   Home / Hero
+   ========================= */
+#home-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-page img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 25% 25%;
+}
+
+.home-img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.home-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay-home {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;                  /* anchor text near bottom */
+    align-items: flex-start;
+    padding: clamp(16px, 2vw, 24px);
+    padding-bottom: clamp(48px, 10vh, 120px);   /* comfy bottom spacing */
+    color: #fff;
+}
+
+.overlay-home h1, .overlay-home h2 { margin: 0; }
+
+.overlay-home h1 {
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.overlay-home h4 {
+    margin-bottom: -100px;
+    padding-top: 700px;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+/* =========================
+   About
+   ========================= */
+#about-page, #projects-page { padding-top: 50px; }
+
+.Berhane-abt-us-img {
+    width: 500px;
+    border-radius: 20px;
+    margin-top: 100px;
+}
+
+/* =========================
+   Projects (cards on hover)
+   ========================= */
+.projects-title {
     text-align: center;
     padding-bottom: 30px;
 }
 
-/* Ensure the container has relative positioning */
+/* Container ensures proper overlay positioning */
 .project-img-container {
     position: relative;
     display: inline-block;
 }
-.overlay a{
-    position:absolute;
-    bottom:70px;
-    background-color: black;
-    padding: 15px;
-    text-decoration: none;
-    outline: none;
-    color: white;
-}
 
-.overlay h1{
-    text-align: center;
-}
-
-.overlay h3{
-    text-align: center;
-}
-.project-description{
-    position:absolute;
-    bottom:10px;
-}
-/* Style the overlay to cover the image */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    opacity: 0;
-    transition: opacity 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    margin: 0; /* Ensure no margin */
-    padding: 0; /* Ensure no padding */
-}
-
-/* Ensure the overlay is visible on hover */
-.project-img-container:hover .overlay {
-    opacity: 1;
-}
-
-/* Responsive image */
 .project-img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0; /* Ensure no margin */
-    padding: 0; /* Ensure no padding */
-    border-radius: 10px; /* Match border-radius with overlay */
-}
-.skills-title{
-    padding-top: 70px;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
 }
 
-.contact-title{
-    padding-top: 70px;
-    padding-bottom: 20px;
+/* Dim overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,.6);
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    margin: 0;
+    padding: 0;
 }
 
-.contact{
-    min-height: 50vh;
-    text-align: center;
-}
+.project-img-container:hover .overlay { opacity: 1; }
 
-.contact-container{
-    max-width: 800px;
-    margin: 0 auto;
-}
+.overlay h1, .overlay h3 { text-align: center; }
 
-.none-blue-link-img{
+.overlay a {
+    position: absolute;
+    bottom: 70px;
+    background-color: black;
+    padding: 15px;
     text-decoration: none;
     outline: none;
-    color:white;
+    color: var(--text);
 }
 
+.overlay a:hover { background-color: var(--muted); }
 
-.container h2{
-    font-size: 36px;
-    margin-bottom: 40px;
+.project-description {
+    position: absolute;
+    bottom: 10px;
 }
 
-.container-wrapper{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 30px;
-}
+/* =========================
+   Resume Tabs + Sections
+   ========================= */
+.skills-title { padding-top: 70px; }
 
-.contact-form{
-    text-align: left;
-}
-
-.contact-form h3{
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.form-group{
-    margin-bottom: 20px;
-}
-
-input, textarea{
-    width:100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    background-color: #f8f9fa;
-    color:#333;
-}
-
-input:focus,
-textarea:focus{
-    outline:none;
-    box-shadow: 0 0 8px #bbb;
-}
-
-button{
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #3a3a3a;
-    color: #fff;
-    border: none;
-    cursor:pointer;
-    transition: 0.3s ease;
-}
-
-
-.contact-info{
-    text-align: left;
-}
-
-.contact-info h3{
-    font-size:24px;
-    margin-bottom: 20px;
-}
-
-.contact-info p{
-    margin-bottom: 10px;
-}
-
-.contact-info i{
-    margin-right: 10px;
-}
-
-footer {
-    color: white;
-    background-color: black !important;
-}
-
-.footer-text {
-    margin-top: 1.5rem;
-    color: white;
-    text-align: center;
-    background-color: #212529;
-}
-
-.footer-text p{
-    padding-top: 20px;
-    margin-bottom: -10px;
-    color: white;
-}
-
-.contact-logo{
-    font-size: 40px;
-}
-
-.resume-tab{
+.resume-tab {
     display: inline;
     padding-left: 20px;
 }
 
-.skills-tabs{
+.skills-tabs { /* container for tabs */ }
 
-}
+.resume-content { padding-left: 50px; }
 
-.resume-content{
-    padding-left: 50px;
-}
+/* Default visibility: show Experiences first, hide others */
+#resume-experiences { display: block; }
+#resume-summits, #resume-skills, #resume-education, #resume-coursework { display: none; }
 
-#resume-skills{
-    display: block;
-}
-#resume-coursework, #resume-education, #resume-honors, #resume-experiences{
-    display: none;
-}
-
-.resume-link{
-    padding-top: 50px;
-}
-
-.resume-elements {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 30px; /* Adjust the gap between elements */
-    padding-top: 20px;
-
-}
-
-
-
-.resume-element {
-    margin-bottom: 20px;
-}
-
-*.unselectable {
-    user-select: none;
-}
-
-/* Initial hover underline animation */
+/* Hover underline animation for tabs */
 .hover-underline-animation {
     display: inline-block;
     position: relative;
@@ -246,7 +211,7 @@ footer {
     left: 0;
     background-color: #0087ca;
     transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+    transition: transform .25s ease-out;
 }
 
 .hover-underline-animation:hover::after {
@@ -254,118 +219,269 @@ footer {
     transform-origin: bottom left;
 }
 
-/* Clicked state underline animation */
 .hover-underline-animation.clicked::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-    background-color: #0087ca; /* Ensure the underline color is consistent */
-}
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: rgb(25, 25, 25);
-    color: white !important;
+    background-color: #0087ca;
 }
 
-#home-page {
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* =========================
+   Unified Resume Card System
+   (Experience, Summits, Skills, Education, Coursework)
+   ========================= */
+.resume-elements {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--gap-lg);
+    padding-top: 20px;
 }
 
-#home-page img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 25% 25%;
-}
-
-.home-img-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* Hide any overflow */
-}
-
-.home-img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: auto;
-    height: 100%; /* Ensure height fills the screen */
-    transform: translate(-50%, -50%);
-}
-
-.overlay-home {
-    position: absolute;
-    bottom: 0; /* Position at the bottom */
-    left: 0; /* Position at the left */
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust color and opacity as needed */
-    padding: 20px;
-    opacity: 1; /* Initially hidden */
+.resume-element {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    padding: 16px 18px;
+    box-shadow: var(--card-shadow);
+    min-height: 160px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the start (left) */
-    color: white;
+    gap: 8px;
+    transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 
-.overlay-home h1, .overlay-home h2 {
-    margin: 0;
+.resume-element:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
 }
 
-.overlay-home h1 {
-    font-size: 6rem;
-    font-weight: bold;
-}
-
-.overlay-home h4 {
-    margin-bottom: -100px;
-    padding-top:700px;
-    font-size: 1.5rem;
-    font-weight: normal;
-}
-
-.navbar {
-    position: fixed; /* Make the navbar fixed */
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure the navbar is above other content */
-    box-shadow: 10px 1px 8px black;
-    background-color: black;
-    color: white;
-    font-size: 20px !important;
-}
-
-#about-page, #projects-page{
-    padding-top: 50px;
-}
-
-.overlay a:hover{
-    background-color: #bbbbbb;
-}
-
-.send-message-btn:hover{
-    background-color: white;
-}
-
-.mobile{
-    display: none;
-}
-.not-mobile{
+/* Headings inside cards */
+#resume-experiences .resume-element b,
+#resume-summits   .resume-element b,
+#resume-education .resume-element b {
     display: block;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: .2px;
+    margin-top: 4px;
 }
 
-@media screen and (max-width: 768px){
+/* Subtle type tweaks */
+#resume-experiences .resume-element,
+#resume-education  .resume-element {
+    line-height: 1.35;
+    font-size: .97rem;
+    opacity: .95;
+}
+
+#resume-experiences .resume-element br + b,
+#resume-education  .resume-element br + b {
+    margin-top: 6px;
+}
+
+/* Skills: show proficiency as a pill */
+#resume-skills .resume-element { min-height: unset; }
+#resume-skills .resume-element b {
+    display: inline-block;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .35px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border: 1px solid #334155;
+    border-radius: 999px;
+    background: #0b1220;
+    opacity: .95;
+    margin-top: 6px;
+}
+
+/* Optional date chip for Experience/Education */
+.date-pill {
+    display: inline-block;
+    font-size: .72rem;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border: 1px solid #334155;
+    border-radius: 999px;
+    background: #0b1220;
+    opacity: .9;
+}
+
+/* =========================
+   Coursework Cards
+   ========================= */
+.coursework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--gap-lg);
+    align-items: stretch;
+}
+
+.semester-block {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--card-radius);
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
+    transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+    box-shadow: var(--card-shadow);
+}
+
+.semester-block:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.semester-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: .2px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Bullet list with accent dots */
+.course-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.course-list li {
+    display: grid;
+    grid-template-columns: 10px 1fr;
+    gap: 10px;
+    align-items: start;
+    font-size: .975rem;
+    line-height: 1.35;
+}
+
+.course-list li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4dabf7;
+    margin-top: 7px;
+}
+
+/* Larger screens: allow long lists to split into two columns */
+@media (min-width: 992px) {
+    .course-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* =========================
+   Contact
+   ========================= */
+.contact-title {
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.contact { min-height: 50vh; text-align: center; }
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form { text-align: left; }
+.contact-form h3 { font-size: 24px; margin-bottom: 20px; }
+
+.form-group { margin-bottom: 20px; }
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px #bbb;
+}
+
+button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3a3a3a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.send-message-btn:hover { background-color: #ffffff; color: #000; }
+
+.contact-info { text-align: left; }
+.contact-info h3 { font-size: 24px; margin-bottom: 20px; }
+.contact-info p { margin-bottom: 10px; }
+.contact-info i { margin-right: 10px; }
+.contact-logo { font-size: 40px; }
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+    color: var(--text);
+    background-color: black !important;
+}
+
+.footer-text {
+    margin-top: 1.5rem;
+    color: var(--text);
+    text-align: center;
+    background-color: #212529;
+}
+
+.footer-text p {
+    padding-top: 20px;
+    margin-bottom: -10px;
+    color: var(--text);
+}
+
+/* =========================
+   Links / Utilities
+   ========================= */
+.none-blue-link-img {
+    text-decoration: none;
+    outline: none;
+    color: var(--text);
+}
+
+*.unselectable { user-select: none; }
+
+.overlay a:hover { background-color: var(--muted); }
+
+.send-message-btn:hover { background-color: #ffffff; }
+
+/* Mobile image toggles */
+.mobile { display: none; }
+.not-mobile { display: block; }
+
+/* =========================
+   Responsive
+   ========================= */
+@media screen and (max-width: 768px) {
     .about-text {
         position: absolute;
         bottom: 0;
-        width: 100%; /* Ensures it spans the container width */
-        text-align: center; /* Centers the text */
+        width: 100%;
+        text-align: center;
     }
+
     .nav-link {
         font-size: 1.25rem;
         margin-left: 0;
@@ -375,53 +491,31 @@ body, html {
         width: 100%;
     }
 
-    .Berhane-abt-us-img{
+    .Berhane-abt-us-img {
         width: 100%;
-        padding-top: 0; /* or remove padding entirely */
-        margin-top: -20px; /* Adjust this value as needed */
-    }
-    .resume-elements {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 30px; /* Adjust the gap between elements */
-        padding-top: 20px;
-
+        padding-top: 0;
+        margin-top: -20px;
+        padding-bottom: 20px;
     }
 
-    .resume-content{
-        padding-left: 0;
-    }
+    .resume-content { padding-left: 0; }
 
-    .contact-form{
-        padding-top: 30px;
-    }
+    #home-page { height: 100vh; display: flex; justify-content: center; align-items: center; }
 
-    #home-page {
-        height: 100vh; /* Full viewport height */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #home-page img{
+    #home-page img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: 25% 25%;
     }
 
-    .home-img-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden; /* Hide any overflow */
-    }
+    .home-img-container { position: relative; width: 100%; height: 100%; overflow: hidden; }
 
     .home-img {
         position: absolute;
         top: 50%;
         width: auto;
-        height: 100%; /* Ensure height fills the screen */
+        height: 100%;
         transform: translate(-50%, -50%);
         background-position: center center;
         background-repeat: no-repeat;
@@ -429,30 +523,23 @@ body, html {
 
     .overlay-home h4 {
         margin-bottom: -40px;
-        padding-top:160%;
+        padding-top: 160%;
         font-size: .7rem;
         font-weight: normal;
     }
 
-    .overlay-home h1 {
-        font-size: 2rem;
-        font-weight: bold
-    }
-    .not-mobile{
-        display: none;
-    }
-    .mobile{
-        display: block;
-    }
+    .overlay-home h1 { font-size: 2rem; font-weight: bold; }
 
-    .Berhane-abt-us-img{
-        width: 100%;
-        padding-bottom: 20px;
-    }
-    
-    .projects-title{
-        text-align: center;
-        padding-bottom: 10px;
-    }
-    
+    .not-mobile { display: none; }
+    .mobile { display: block; }
+
+    .projects-title { text-align: center; padding-bottom: 10px; }
+}
+
+/* Tighten card spacing/padding on very small screens */
+@media (max-width: 576px) {
+    .resume-elements { gap: var(--gap-sm); }
+    .resume-element { padding: 14px; }
+    .coursework-grid { gap: var(--gap-sm); }
+    .semester-block { padding: 14px; }
 }
